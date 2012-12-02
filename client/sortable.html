@@ -1,0 +1,29 @@
+<head>
+  <title>sortable example</title>
+	<!-- hack until we have jquery ui as a package -->
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css">
+  <script type="text/javascript" charset="utf-8" src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+</head>
+
+<body>
+	{{> sortable}}
+</body>
+
+<template name="sortable">
+	<table id="items" class='table table-hover'>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Tagline</th>
+			</tr>
+		</thead>
+		<tbody>
+		{{#each itemlist}}
+			<tr data-id='{{_id}}' data-listposition='{{listposition}}'>
+				<td>{{name}}</td>
+				<td>{{tagline}}</td>
+			</tr>
+		{{/each}}
+		</tbody>
+	</table>
+</template>
